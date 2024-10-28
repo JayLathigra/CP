@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title></title>
+    <style>
+        html,
+        body,
+        figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        .g-units {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+    <figure class="element-interactive interactive"></figure>
+    <script src="vendor/requirejs/require.js"></script>
+    <script>
+
+        // Paths
+        var guardianRoot = window.guardianRoot || "{{remote-root}}";
+        var localRoot = window.localRoot || "{{local-root}}";
+
+        // DOM element
+        var el = document.querySelector('.interactive');
+
+        // Boot
+        require(['boot.js'], function (app) {
+            app.boot(el);
+        });
+
+    </script>
+</body>
+
+</html>
